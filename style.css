@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  flex: 1;
+  max-width: 260px;
+  text-align: center;
+}
+
+.card h1 {
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 2.5rem;
+}
+
+.card p {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.kratos h1,
+.doom h1 {
+  color: #c00000;
+}
+
+.ghost h1 {
+  color: #00b050;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* same width/centering as the cards above, so images sit centered under each name */
+.gallery .col {
+  flex: 1;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* black & white treatment so Price and the last Doom pic match the rest */
+.gallery img.bw {
+  filter: grayscale(1) contrast(1.4);
+}
+
+.gallery img.price {
+  filter: grayscale(1) contrast(1.6) brightness(1.35);
+}
+
+.gallery img.doom-bw {
+  filter: grayscale(1) contrast(1.5) brightness(1.2);
+}
+
+/* stack on small screens */
+@media (max-width: 700px) {
+  .columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery {
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .gallery .col {
+    gap: 0.5rem;
+  }
+}
